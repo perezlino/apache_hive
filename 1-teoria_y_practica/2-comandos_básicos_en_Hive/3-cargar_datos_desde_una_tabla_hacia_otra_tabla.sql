@@ -31,7 +31,7 @@
     Si esta propiedad es falsa, los nombres de las columnas no vendrán junto con los datos, pero ahora es verdadera, así que 
     los nombres están ahí.
 
-    Ahora los datos de esta tabla se van a cargar en una nueva tabla. Vamos a crear una nueva tabla. "CREAR tabla tab". Ten 
+    Ahora los datos de esta tabla se van a cargar en una nueva tabla. Vamos a crear una nueva tabla. "CREATE TABLE tab". Ten 
     en cuenta que puedes crear esta tabla con cualquier número de columnas, no es obligatorio que el esquema de la tabla de 
     origen y el esquema de la tabla de destino sean iguales. Puede crear la tabla de destino con cualquier número de columnas, 
     pero sí, tiene que tener en cuenta ambos esquemas al cargar los datos. Si intentas insertar una columna de tipo string 

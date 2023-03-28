@@ -1,0 +1,3 @@
+40,HR,Alfonso,5600
+40,HR,Javiera,2348
+40,HR,Patricia,1098
