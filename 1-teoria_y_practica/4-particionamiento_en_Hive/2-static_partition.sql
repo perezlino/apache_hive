@@ -90,7 +90,7 @@
     tabla.  
 
 
-    LOAD DATA LOCAL INPATH '/home/alfonso/files' INTO TABLE part_dept PARTITION (deptname ='HR');
+    LOAD DATA LOCAL INPATH '/home/alfonso/rrhh.txt' INTO TABLE part_dept PARTITION (deptname ='HR');
 
 
     ------------------------------------------------------------------------------------------------------------------------
