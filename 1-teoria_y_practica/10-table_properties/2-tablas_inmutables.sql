@@ -1,2 +1,0 @@
-/*  TABLAS INMUTABLES
-    =================
