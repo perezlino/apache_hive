@@ -53,4 +53,51 @@
     CREAR TABLA TRANSACCIONAL
     -------------------------
 
-    Now after all the properties are set, let us learn how to create the ACID table, or we can say transactional table. For that, create table. I'm creating a table "employee". Emp_id is of INT data type, emp name of string data type, then emp department, that is also a string data type. Since it was mandatory that for transactional features, a table should be bucketed, so we are creating a bucketed table. I'm choosing 4 buckets, stored as ORC file, because only ORC file format supports transactional features. Here are my table properties. After setting this transactional property of this table to true, our employee table has now become acid-enabled. We can now perform insert, update, delete, operations on it. So starting with our first operation, this table is empty till now, let us insert some data in it. The insert query is almost same like insert query of SQL i.e. like this, "INSERT INTO TABLE [tablename] [Values to be inserted]". This is my first column value, second column value, and third column value. Each row values are separated by braces. It means this is my first row, this is my second row, third row, fourth row, and so on. This query is similar like we do insert in SQL, so let us do. Insert will launch a MapReduce job. the data got inserted. Let us check. It has inserted all the rows. Now if you want to insert the same data into this table again, then Hive shell will append the new data with the previous data, Hive won't overwrite it. The new data will get appended to the old data. Let us insert the same data. As you can see, this is the old row and this is the new row. Rather than overriding, it has appended the new data. After insert, let us perform update operation. Update query is also same like update query in SQL. So we'll type "UPDATE tablename", "UPDATE employee SET m_department=accounts", I'm changing the department name, [WHERE emp_id=102]. This query will change the employee department to accounts, where employee ID is 102. As you can see, for a simple update of one row, it has launched a MapReduce job, which again is taking time. This is one of the points which support the statement that "ACID properties are not very efficient in Hive". It has updated and taken quite a long time. "SELECT * FROM employee". As you can see, 102 has changed to accounts. Please note that we cannot update the bucketed column in Hive. In our table, if I try to update employee ID, then it would throw an error saying "Updating values of bucketing columns is not supported". This can be considered as one more limitation in transactional features of Hive. We are now left with delete operations. Let us do that. "DELETE FROM employee" [WHERE emp_id=104]". For this delete also, it will launch a MapReduce job. Let us see. It has deleted the employees of 104 ID. With this, we have completed our ACID or transactional features of Hive. See you in next video.
+    Ahora, después de establecer todas las propiedades, vamos a aprender a crear la tabla ACID, o podemos decir tabla transaccional. 
+    Para ello, creamos la tabla:
+
+
+                                CREATE TABLE IF NOT EXISTS employee (
+                                emp_id int,
+                                emp_name string,
+                                emp_dep string
+                                ) 
+                                CLUSTERED BY (emp_id) INTO 4 BUCKETS
+                                STORED AS ORC;
+                                TBLPROPERTIES("transactional"="true")
+
+
+  Después de establecer la propiedad transaccional de esta tabla a true, nuestra tabla de empleados se ha convertido en acid-enabled. 
+  Ahora podemos realizar operaciones de INSERT, UPDATE, DELETE sobre ella. Empezando con la primera operación, esta tabla está vacía 
+  hasta ahora, vamos a insertar algunos datos en ella. La consulta de inserción es casi la misma que la consulta de inserción de SQL, 
+  es decir, como esta:
+
+
+  INSERT INTO TABLE employee VALUES('101','Jack','HR'),('102','Frank','HR'),('103','Lul','Clerical'),('104','Smith','Accounts'),
+                                   ('105','Stan','HR'),('106','Hakuna','Clerical');
+
+
+  Ahora bien, si deseas volver a insertar los mismos datos en esta tabla, el Hive shell anexará los nuevos datos a los anteriores, 
+  Hive no los sobrescribirá.  
+
+  Después de INSERT, vamos a realizar la operación de UPDATE. La consulta de update es igual que la consulta de update en SQL. Así 
+  que escribiremos:
+
+
+                                UPDATE employee SET emp_dep="Accounts" WHERE emp_id = 102;
+
+
+  Para una simple actualización de una fila, se lanza un MapReduce job, que de nuevo está tardando tiempo. Este es uno de los puntos 
+  que apoyan la afirmación de que "las propiedades ACID no son muy eficientes en Hive".    
+
+  Ten en cuenta que no podemos actualizar la columna bucketed en Hive. En nuestra tabla, si intento actualizar el ID del empleado, se 
+  produce un error que dice "Updating values of bucketing columns is not supported". Esto puede considerarse una limitación más de las 
+  funciones transaccionales de Hive.  
+
+  Ahora nos quedan las operaciones de eliminar. Hagámoslo:
+
+
+                                              DELETE FROM employee WHERE emp_id = 104;   
+
+
+  Se eliminaron los registros que tuvieran el emp_id = 104.                                                                       
