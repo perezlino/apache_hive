@@ -26,6 +26,23 @@
     503-England
     504-England
 
+    Otra forma de concatenar:
+
+    SELECT 'Hola' || 'Alfonso'
+
+    Hola Alfonso
+
+    Tambien podemos concatenar valores de distintas columnas:
+
+    SELECT col1 || col3 FROM tabla1;
+
+    499England
+    501England
+    500England
+    502Wales
+    503England
+    504England
+
     ------------------------------------------------------------------------------------------------------------------------
 
     LENGTH
@@ -137,8 +154,8 @@
 
     ------------------------------------------------------------------------------------------------------------------------
 
-    REVERSE
-    -------
+    REVERSE (string o col_string)
+    -----------------------------
 
     SELECT REVERSE(col3) FROM tabla1;
 

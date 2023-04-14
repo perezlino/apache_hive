@@ -1,8 +1,19 @@
 /*  MODES EN HIVE
     =============
 
-    En este video, contiene una explicación sobre los diferentes modos de Hive, y cómo cambiar entre estos modos. 
-    En Hive, tenemos tres modos disponibles según el entorno Cloudera, y esos son: 
+    METASTORE es el repositorio central de metadatos de Apache Hive. Almacena metadatos para tablas Hive (como su esquema 
+    y ubicación) y particiones en una base de datos relacional. Proporciona al cliente acceso a esta información mediante 
+    la API del servicio metastore.
+
+    Hive metastore consta de dos unidades fundamentales:
+
+    ● Un servicio que proporciona acceso al metastore a otros servicios de Apache Hive
+    ● Almacenamiento en disco para los metadatos de Hive, que es independiente del almacenamiento HDFS    
+
+    Existen tres modos para el despliegue del metastore de Hive.
+
+    Esta lección contiene una explicación sobre los diferentes modos de Hive, y cómo cambiar entre estos modos. En Hive, 
+    tenemos tres modos disponibles según el entorno Cloudera, y esos son: 
     
     ● El modo embebido 
     ● El modo local 

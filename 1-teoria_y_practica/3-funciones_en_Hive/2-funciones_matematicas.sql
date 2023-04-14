@@ -16,7 +16,7 @@
     FLOOR
     -----
 
-    La función FLOOR devolverá el número más grande, menor que el argumento pasado.
+    La función FLOOR devolverá el número más grande, menor que el argumento entregado.
 
     SELECT FLOOR(10.9);
 

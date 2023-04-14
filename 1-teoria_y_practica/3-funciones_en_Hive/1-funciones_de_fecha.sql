@@ -7,9 +7,17 @@
     Así que esta función devuelve el número de segundos entre la fecha especificada en el argumento, y el 
     Unix time epoch. Este Unix time epoch es un valor establecido por Unix que es 1970-01-01 00:00:00.
 
-    SELECT UNIX_TIMESTAMP('2017-04-26 00:00:00')
+                                    SELECT UNIX_TIMESTAMP('2017-04-26 00:00:00')
 
     Y obtenemos: 1493145000
+
+    Si no pasamos un valor como argumento, toma la fecha actual:
+
+                                                SELECT UNIX_TIMESTAMP()
+
+    Podemos agregar este valor como columna en una consulta:
+
+                                        SELECT UNIX_TIMESTAMP(), * FROM tabla;
 
     ------------------------------------------------------------------------------------------------------------------------
 
@@ -19,7 +27,7 @@
     Este comando es justo lo contrario del comando anterior. Este comando devolverá la fecha a partir de segundos. 
     Devuelve la fecha, y esa fecha la está calculando desde 0 segundos, desde la Unix time epoch 1970-01-01 00:00:00.
 
-    SELECT FROM_UNIXTIME(1234145)
+                                            SELECT FROM_UNIXTIME(1234145)
 
     Y obtenemos: 1970-01-15 12:19:05
 
@@ -30,7 +38,7 @@
 
     La función TO_DATE devuelve la parte de fecha del timestamp en el formato "yyyy-MM-dd".
 
-    SELECT TO_DATE('2000-01-01 10:20:30')
+                                        SELECT TO_DATE('2000-01-01 10:20:30')
 
     Y obtenemos: '2000-01-01'
 
@@ -41,7 +49,7 @@
 
     La función YEAR devuelve el año de la fecha.
 
-    SELECT YEAR('2000-01-01 10:20:30')
+                                            SELECT YEAR('2000-01-01 10:20:30')
 
     Y obtenemos: 2000
 
@@ -52,7 +60,7 @@
 
     La función MONTH devuelve el mes de la fecha.
 
-    SELECT MONTH('2000-03-01 10:20:30')
+                                            SELECT MONTH('2000-03-01 10:20:30')
 
     Y obtenemos: 3 
 
@@ -64,7 +72,7 @@
 
     Las funciones DAY y DAYOFMONTH devuelve el día de la fecha.
 
-    SELECT DAY('2000-03-01 10:20:30')
+                                            SELECT DAY('2000-03-01 10:20:30')
 
     Y obtenemos: 1 
 
@@ -75,7 +83,7 @@
 
     La función HOUR devuelve la hora del timestamp.
 
-    SELECT HOUR('2000-03-01 10:20:30')
+                                            SELECT HOUR('2000-03-01 10:20:30')
 
     Y obtenemos: 10 
 
@@ -86,7 +94,7 @@
 
     La función MINUTE devuelve los minutos del timestamp.
 
-    SELECT MINUTE('2000-03-01 10:20:30')
+                                            SELECT MINUTE('2000-03-01 10:20:30')
 
     Y obtenemos: 20     
 
@@ -97,7 +105,7 @@
 
     La función SECOND devuelve los segundos del timestamp.
 
-    SELECT SECOND('2000-03-01 10:20:30')
+                                            SELECT SECOND('2000-03-01 10:20:30')
 
     Y obtenemos: 30   
 
@@ -108,7 +116,7 @@
 
     La función WEEKOFYEAR devuelve el numero de semana de la fecha.
 
-    SELECT WEEKOFYEAR('2000-03-01 10:20:30')
+                                        SELECT WEEKOFYEAR('2000-03-01 10:20:30')
 
     Y obtenemos: 9 
 
@@ -119,7 +127,7 @@
 
     La función DATEDIFF devuelve el número de días entre las dos fechas dadas.
 
-    SELECT DATEDIFF('2000-03-01', '2000-01-10')
+                                        SELECT DATEDIFF('2000-03-01', '2000-01-10')
 
     Y obtenemos: 51     
 
@@ -130,7 +138,7 @@
 
     La función DATE_ADD añade el número de días a la fecha especificada.
 
-    SELECT DATE_ADD('2000-03-01', 5)
+                                            SELECT DATE_ADD('2000-03-01', 5)
 
     Y obtenemos: '2000-03-06'       
 
@@ -141,8 +149,30 @@
 
     La función DATE_SUB resta el número de días hasta la fecha especificada.
 
-    SELECT DATE_SUB('2000-03-01', 5)
+                                            SELECT DATE_SUB('2000-03-01', 5)
 
     Y obtenemos: '2000-02-25' 
+
+    ------------------------------------------------------------------------------------------------------------------------       
+
+    CURRENT_DATE
+    ------------
+
+    La función CURRENT_DATE devuelve la fecha actual en el momento que se realiza la consulta.
+
+                                                    SELECT CURRENT_DATE;
+
+    Y obtenemos: '2023-04-13'
+
+    ------------------------------------------------------------------------------------------------------------------------       
+
+    LAST_DAY (string date)
+    ----------------------
+
+    La función LAST_DAY devuelve el último dia del mes de la fecha especificada.
+
+                                            SELECT LAST_DAY('2022-02-01 16:32:01');
+
+    Y obtenemos: 2022-02-28    
 
     ------------------------------------------------------------------------------------------------------------------------       
