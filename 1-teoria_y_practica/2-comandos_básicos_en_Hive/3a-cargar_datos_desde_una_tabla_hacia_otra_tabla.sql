@@ -62,7 +62,8 @@
 
 
                                 INSERT INTO TABLE tab SELECT col1, col2, col3 FROM emp_tab;
-
+                                                           o
+                                    INSERT INTO tab SELECT col1, col2, col3 FROM emp_tab;
 
     Vamos a ver si los datos se han cargado correctamente en la tabla:
 

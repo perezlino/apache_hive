@@ -10,6 +10,8 @@
     Tanto las tablas gestionadas como las tablas externas se pueden identificar utilizando el comando:
     
                                             DESCRIBE FORMATTED nombre_tabla
+                                                          o
+                                            DESCRIBE EXTENDED nombre_tabla                                                          
 
     ------------------------------------------------------------------------------------------------------------------------
 
@@ -41,6 +43,8 @@
     Utilice: 
     
                                             DESCRIBE FORMATTED emp.employee; 
+                                                            o
+                                            DESCRIBE EXTENDED emp.employee; 
                                             
     
     para obtener la descripción de la tabla y debería ver "Table Type" como "MANAGED_TABLE". 
@@ -74,6 +78,8 @@
     Utilice: 
     
                                             DESCRIBE FORMATTED emp.employee_external; 
+                                                              o
+                                            DESCRIBE EXTENDED emp.employee_external; 
                                             
                                             
     para obtener la descripción de la tabla y debería ver el "Table Type" como "EXTERNAL_TABLE". 

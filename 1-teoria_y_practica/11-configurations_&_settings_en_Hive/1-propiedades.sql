@@ -42,7 +42,9 @@
     Ahora bien, si no doy ningún valor en "STORED AS" al crear una tabla, elegirá por defecto el tipo de archivo como ORC. Para
     verificar el cambio utilizamos:
 
-                                                    DESC FORMATTED nombre_tabla;  
+                                                    DESC FORMATTED nombre_tabla;
+                                                                o
+                                                    DESC EXTENDED nombre tabla;  
 
     A continuación, la siguiente propiedad es: 
     

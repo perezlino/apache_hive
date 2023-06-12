@@ -22,8 +22,8 @@
     CREATE TABLE test_details_orc (visit_id INT, store_id SMALLINT)
     STORED AS ORC;
 
-    DESCRIBE FORMATTED test_details_txt;
-    DESCRIBE_FORMATTED test_details_orc;
+    DESCRIBE FORMATTED test_details_txt;  <------------- DESCRIBE EXTENDED test_details_txt (lo mismo)
+    DESCRIBE_FORMATTED test_details_orc;  <------------- DESCRIBE EXTENDED test_details_orc (lo mismo)
 
     SELECT * FROM test_details_text;
     SELECT * FROM test_details_orc;

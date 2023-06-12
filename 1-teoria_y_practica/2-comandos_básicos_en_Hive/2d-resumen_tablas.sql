@@ -267,7 +267,7 @@
 
 	INSERT INTO ORCtable SELECT * FROM managedtable;
 
-	DESCRIBE FORMATTED ORCtable;
+	DESCRIBE FORMATTED ORCtable;  <---------- DESCRIBE EXTENDED ORCtable; (lo mismo)
 
     ------------------------------------------------------------------------------------------------------------------------
 

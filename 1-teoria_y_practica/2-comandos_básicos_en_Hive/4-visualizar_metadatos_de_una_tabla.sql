@@ -29,4 +29,6 @@
     Otra forma MÁS COMPLETA de visualizar la metadata de una tabla es utilizando la siguiente sentencia:
 
 
-                                        desc formatted tab;    
+                                        desc formatted tab; 
+                                                o
+                                        desc extended tab;   

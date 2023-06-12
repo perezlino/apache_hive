@@ -185,7 +185,9 @@
 
     Las propiedades de una tabla podemos visualizarlas utilizando la siguiente sentencia:
 
-                                        desc formatted tab;      
+                                        desc formatted tab; 
+                                                o
+                                        desc extended tab;     
 
     De esta forma podemos modificar distintas propiedades de una tabla. En secciones posteriores se detallará un poco 
     más sobre estas propiedades:
